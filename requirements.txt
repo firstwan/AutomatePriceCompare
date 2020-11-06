@@ -1,0 +1,4 @@
+PyAutoGUI
+selenium
+#openpyxl
+XlsxWriter
