@@ -3,18 +3,19 @@ from openpyxl.styles import PatternFill, Font, NamedStyle
 from datetime import date
 from selenium import webdriver
 from ECommerWeb.lazada import lazada
+from ECommerWeb.shopee import shopee
 
 import os.path
 import os
 
 def main():
-    print("Enter the product name (Model num is the best): ")
-    product_name = input()
+    product_name = input("Enter the product name (Model num is the best): ")
 
     browser = webdriver.Chrome()
 
-    # Lazada
+    # E-commerce
     product_list = lazada().search_product(browser, product_name)
+    #product_list.extend(shopee().search_product(browser, product_name))
 
     #product_list.extend(new_list)
     browser.quit()
